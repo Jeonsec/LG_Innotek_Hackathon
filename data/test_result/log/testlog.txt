@@ -1,0 +1,37 @@
+INFO:main-logger:arch: None
+backbone: None
+base_lr: 0.1
+batch_size: 256
+batch_size_val: 1024
+best_target: loss
+cooldown_epochs: 0
+data_path_test: data/test.csv
+data_path_train: data/test_0/train.csv
+data_path_val: data/test_0/valid.csv
+epochs: 50
+evaluate: True
+feature_X: 56
+feature_Y: 14
+manual_seed: 10
+min_lr: 0.0001
+model_path: TRAINED_220803_FINETUNING_NRMSE_LOSS/best2.pth
+momentum: 0.9
+moving_average_decay: 0.9999
+norm_ws: False
+optimizer: Adam
+optimizer_SAM: False
+power: 0.9
+print_freq: 10
+resume: None
+save_freq: 1
+save_path: data/test_result
+save_top_k: 3
+sched: cosine
+start_epoch: 0
+train_gpu: [0, 1]
+warmup_epochs: 0
+warmup_lr: 0.0001
+weight: None
+weight_decay: 0.0001
+workers: 4
+INFO:main-logger:=> loading weight 'TRAINED_220803_FINETUNING_NRMSE_LOSS/best2.pth'

@@ -1,0 +1,44 @@
+DATA:
+  data_path_train : 'data/test_0/train.csv'
+  data_path_val : 'data/test_0/valid.csv'
+  workers: 4  # data loader workers
+
+MODEL:
+  arch: 
+  backbone: 
+  feature_X: 56
+  feature_Y: 14
+  weight: 
+  resume: ../GitHub/LG_Innotek_Hackathon/TRAINED/train_epoch_80.pth
+  norm_ws: False
+
+HYPER_PARAMETER:
+  train_gpu: [0, 1]
+  batch_size: 256  # batch size for training
+  batch_size_val: 16  # batch size for validation during training, memory and speed tradeoff
+
+  optimizer: Adam # SGD, Adadelta, Adagrad, Adam, RMSprop
+  optimizer_SAM: False # set to true when you want to use  sharpness aware minimization
+  sched: poly # cosine #poly
+  base_lr: 0.01 # Try: 0.0001
+  min_lr: 0.0001
+  warmup_lr: 0.0001
+  warmup_epochs: 0
+  cooldown_epochs: 0
+  start_epoch: 0
+  epochs: 300
+  power: 0.9
+  momentum: 0.9
+  weight_decay: 0.0001
+  moving_average_decay: 0.9999
+  manual_seed: 10
+  
+SAVE_AND_LOG:
+  print_freq: 10
+  save_freq: 1
+  save_path: ../LG_Innotek_Hackathon/TRAINED_NO_VAL
+  evaluate: True  # evaluate on validation set, extra gpu memory needed and small batch_size_val is recommend
+  best_target: loss # save best models according to best_target (loss, auc, iou)
+  save_top_k: 3 # number of best models to save
+    
+
